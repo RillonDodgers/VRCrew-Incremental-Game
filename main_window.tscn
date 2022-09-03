@@ -1,0 +1,340 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://vrcrew_logo_small.png" type="Texture" id=1]
+[ext_resource path="res://main_window.gd" type="Script" id=2]
+[ext_resource path="res://fonts/debug_font.tres" type="DynamicFont" id=3]
+[ext_resource path="res://fonts/debug_font_32.tres" type="DynamicFont" id=4]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://fonts/debug.otf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 48
+font_data = SubResource( 1 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ],
+"_edit_use_anchors_": true
+}
+
+[node name="button_clicker" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -166.0
+margin_top = -55.0
+margin_right = 166.0
+margin_bottom = 56.0
+icon = ExtResource( 1 )
+flat = true
+icon_align = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+margin_bottom = 70.0
+alignment = 1
+
+[node name="button_people" type="Button" parent="HBoxContainer"]
+margin_right = 958.0
+margin_bottom = 70.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 3 )
+text = "People"
+flat = true
+
+[node name="button_upgrades" type="Button" parent="HBoxContainer"]
+margin_left = 962.0
+margin_right = 1920.0
+margin_bottom = 70.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 3 )
+text = "Upgrades"
+flat = true
+
+[node name="label" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.301
+anchor_right = 0.5
+anchor_bottom = 0.301
+margin_left = -55.0
+margin_top = -23.08
+margin_right = 57.0
+margin_bottom = 24.92
+custom_fonts/normal_font = SubResource( 2 )
+text = "Coins"
+
+[node name="currency" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.301
+anchor_right = 0.5
+anchor_bottom = 0.301
+margin_left = -54.0
+margin_top = 20.92
+margin_right = 330.0
+margin_bottom = 68.92
+custom_fonts/normal_font = SubResource( 2 )
+text = "0"
+
+[node name="UpgradeMenu" type="PopupMenu" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+popup_exclusive = true
+hide_on_item_selection = false
+hide_on_checkable_item_selection = false
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="UpgradeMenu"]
+anchor_right = 1.0
+margin_bottom = 36.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UpgradeMenu/HBoxContainer2"]
+margin_right = 1884.0
+margin_bottom = 36.0
+size_flags_horizontal = 3
+custom_fonts/bold_font = ExtResource( 4 )
+custom_fonts/normal_font = ExtResource( 4 )
+text = "UPGRADES"
+
+[node name="button_close_upgrades" type="Button" parent="UpgradeMenu/HBoxContainer2"]
+margin_left = 1888.0
+margin_right = 1920.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 32, 32 )
+custom_fonts/font = ExtResource( 4 )
+text = "X"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="UpgradeMenu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 67.0
+margin_right = -10.0
+margin_bottom = -10.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UpgradeMenu/ScrollContainer"]
+margin_right = 1900.0
+margin_bottom = 1003.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ClickUpgrade" type="HBoxContainer" parent="UpgradeMenu/ScrollContainer/VBoxContainer"]
+margin_right = 1900.0
+margin_bottom = 62.0
+rect_min_size = Vector2( 0, 62 )
+
+[node name="label" type="RichTextLabel" parent="UpgradeMenu/ScrollContainer/VBoxContainer/ClickUpgrade"]
+margin_right = 1800.0
+margin_bottom = 62.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/normal_font = ExtResource( 4 )
+text = "increase click by 1
+Costs 10"
+
+[node name="btnBuyClickUpgrade" type="Button" parent="UpgradeMenu/ScrollContainer/VBoxContainer/ClickUpgrade"]
+margin_left = 1804.0
+margin_right = 1900.0
+margin_bottom = 62.0
+rect_min_size = Vector2( 96, 32 )
+custom_fonts/font = ExtResource( 4 )
+text = "Buy"
+
+[node name="CPSUpgrade" type="HBoxContainer" parent="UpgradeMenu/ScrollContainer/VBoxContainer"]
+margin_top = 66.0
+margin_right = 1900.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 0, 62 )
+
+[node name="label" type="RichTextLabel" parent="UpgradeMenu/ScrollContainer/VBoxContainer/CPSUpgrade"]
+margin_right = 1800.0
+margin_bottom = 62.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/normal_font = ExtResource( 4 )
+text = "Multiplies base cps by 2
+Costs 10000"
+
+[node name="btnBuyCPSUpgrade" type="Button" parent="UpgradeMenu/ScrollContainer/VBoxContainer/CPSUpgrade"]
+margin_left = 1804.0
+margin_right = 1900.0
+margin_bottom = 62.0
+rect_min_size = Vector2( 96, 32 )
+custom_fonts/font = ExtResource( 4 )
+text = "Buy"
+
+[node name="OzvernUpgrade" type="HBoxContainer" parent="UpgradeMenu/ScrollContainer/VBoxContainer"]
+margin_top = 132.0
+margin_right = 1900.0
+margin_bottom = 194.0
+rect_min_size = Vector2( 0, 62 )
+
+[node name="label" type="RichTextLabel" parent="UpgradeMenu/ScrollContainer/VBoxContainer/OzvernUpgrade"]
+margin_right = 1800.0
+margin_bottom = 62.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/normal_font = ExtResource( 4 )
+text = "Multiplies Ozverns ability by 2.00
+Costs 1000"
+
+[node name="btnBuyOzvernUpgrade" type="Button" parent="UpgradeMenu/ScrollContainer/VBoxContainer/OzvernUpgrade"]
+margin_left = 1804.0
+margin_right = 1900.0
+margin_bottom = 62.0
+rect_min_size = Vector2( 96, 32 )
+custom_fonts/font = ExtResource( 4 )
+text = "Buy"
+
+[node name="CaptainUpgrade" type="HBoxContainer" parent="UpgradeMenu/ScrollContainer/VBoxContainer"]
+margin_top = 198.0
+margin_right = 1900.0
+margin_bottom = 260.0
+rect_min_size = Vector2( 0, 62 )
+
+[node name="label" type="RichTextLabel" parent="UpgradeMenu/ScrollContainer/VBoxContainer/CaptainUpgrade"]
+margin_right = 1800.0
+margin_bottom = 62.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/normal_font = ExtResource( 4 )
+text = "Multiplies Captains ability by 2.00
+Costs 100000"
+
+[node name="btnBuyCaptainUpgrade" type="Button" parent="UpgradeMenu/ScrollContainer/VBoxContainer/CaptainUpgrade"]
+margin_left = 1804.0
+margin_right = 1900.0
+margin_bottom = 62.0
+rect_min_size = Vector2( 96, 32 )
+custom_fonts/font = ExtResource( 4 )
+text = "Buy"
+
+[node name="PeopleMenu" type="PopupMenu" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+popup_exclusive = true
+hide_on_item_selection = false
+hide_on_checkable_item_selection = false
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PeopleMenu"]
+anchor_right = 1.0
+margin_bottom = 36.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PeopleMenu/HBoxContainer2"]
+margin_right = 1884.0
+margin_bottom = 36.0
+size_flags_horizontal = 3
+custom_fonts/bold_font = ExtResource( 4 )
+custom_fonts/normal_font = ExtResource( 4 )
+text = "UPGRADES"
+
+[node name="button_close_people" type="Button" parent="PeopleMenu/HBoxContainer2"]
+margin_left = 1888.0
+margin_right = 1920.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 32, 32 )
+custom_fonts/font = ExtResource( 4 )
+text = "X"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PeopleMenu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 67.0
+margin_right = -10.0
+margin_bottom = -10.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PeopleMenu/ScrollContainer"]
+margin_right = 1900.0
+margin_bottom = 1003.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Ozvern" type="HBoxContainer" parent="PeopleMenu/ScrollContainer/VBoxContainer"]
+margin_right = 1900.0
+margin_bottom = 62.0
+rect_min_size = Vector2( 0, 62 )
+
+[node name="label" type="RichTextLabel" parent="PeopleMenu/ScrollContainer/VBoxContainer/Ozvern"]
+margin_right = 1800.0
+margin_bottom = 62.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/normal_font = ExtResource( 4 )
+text = "Ozvern, increase 2 coins per second
+cost 100"
+
+[node name="btnBuyOzvern" type="Button" parent="PeopleMenu/ScrollContainer/VBoxContainer/Ozvern"]
+margin_left = 1804.0
+margin_right = 1900.0
+margin_bottom = 62.0
+rect_min_size = Vector2( 96, 32 )
+custom_fonts/font = ExtResource( 4 )
+text = "Buy"
+
+[node name="Captain" type="HBoxContainer" parent="PeopleMenu/ScrollContainer/VBoxContainer"]
+margin_top = 66.0
+margin_right = 1900.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 0, 62 )
+
+[node name="label" type="RichTextLabel" parent="PeopleMenu/ScrollContainer/VBoxContainer/Captain"]
+margin_right = 1800.0
+margin_bottom = 62.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/normal_font = ExtResource( 4 )
+text = "Captain, increase 4 coins per second
+cost 10,000"
+
+[node name="btnBuyCaptain" type="Button" parent="PeopleMenu/ScrollContainer/VBoxContainer/Captain"]
+margin_left = 1804.0
+margin_right = 1900.0
+margin_bottom = 62.0
+rect_min_size = Vector2( 96, 32 )
+custom_fonts/font = ExtResource( 4 )
+text = "Buy"
+
+[node name="Shuun" type="HBoxContainer" parent="PeopleMenu/ScrollContainer/VBoxContainer"]
+margin_top = 132.0
+margin_right = 1900.0
+margin_bottom = 194.0
+rect_min_size = Vector2( 0, 62 )
+
+[node name="label" type="RichTextLabel" parent="PeopleMenu/ScrollContainer/VBoxContainer/Shuun"]
+margin_right = 1800.0
+margin_bottom = 62.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/normal_font = ExtResource( 4 )
+text = "Shuun,  increase 8 coins per second
+cost 1,000,000"
+
+[node name="btnBuyShuun" type="Button" parent="PeopleMenu/ScrollContainer/VBoxContainer/Shuun"]
+margin_left = 1804.0
+margin_right = 1900.0
+margin_bottom = 62.0
+rect_min_size = Vector2( 96, 32 )
+custom_fonts/font = ExtResource( 4 )
+text = "Buy"
+
+[node name="Timer" type="Timer" parent="."]
+process_priority = 1
+
+[connection signal="pressed" from="button_clicker" to="." method="_on_button_clicker_pressed"]
+[connection signal="pressed" from="HBoxContainer/button_people" to="." method="_on_button_people_pressed"]
+[connection signal="pressed" from="HBoxContainer/button_upgrades" to="." method="_on_button_upgrades_pressed"]
+[connection signal="pressed" from="UpgradeMenu/HBoxContainer2/button_close_upgrades" to="." method="_on_button_close_upgrades_pressed"]
+[connection signal="pressed" from="UpgradeMenu/ScrollContainer/VBoxContainer/ClickUpgrade/btnBuyClickUpgrade" to="." method="_on_btnBuyClickUpgrade_pressed"]
+[connection signal="pressed" from="UpgradeMenu/ScrollContainer/VBoxContainer/CPSUpgrade/btnBuyCPSUpgrade" to="." method="_on_btnBuyCPSUpgrade_pressed"]
+[connection signal="pressed" from="UpgradeMenu/ScrollContainer/VBoxContainer/OzvernUpgrade/btnBuyOzvernUpgrade" to="." method="_on_btnBuyOzvernUpgrade_pressed"]
+[connection signal="pressed" from="UpgradeMenu/ScrollContainer/VBoxContainer/CaptainUpgrade/btnBuyCaptainUpgrade" to="." method="_on_btnBuyCaptainUpgrade_pressed"]
+[connection signal="pressed" from="PeopleMenu/HBoxContainer2/button_close_people" to="." method="_on_button_close_people_pressed"]
+[connection signal="pressed" from="PeopleMenu/ScrollContainer/VBoxContainer/Ozvern/btnBuyOzvern" to="." method="_on_btnBuyOzvern_pressed"]
+[connection signal="pressed" from="PeopleMenu/ScrollContainer/VBoxContainer/Captain/btnBuyCaptain" to="." method="_on_btnBuyCaptain_pressed"]
+[connection signal="pressed" from="PeopleMenu/ScrollContainer/VBoxContainer/Shuun/btnBuyShuun" to="." method="_on_btnBuyShuun_pressed"]
