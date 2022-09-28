@@ -1,6 +1,12 @@
 # VRCrew Incremental Game
-This is a passion project of mine. I love a lot of the games over on https://www.reddit.com/r/incremental_games
-I created this as learning project of Godot and GDScript. I also made it so friends in the discord community that I'm apart of can have fun with it too.
+This is a passion project of mine. I love a lot of the games over on https://www.reddit.com/r/incremental_games I created this as learning project of Godot and GDScript. I also made it so friends in the discord community that I'm apart of can have fun with it too.
+
+## Getting Started
+* Download [Godot 3.5.x](https://github.com/godotengine/godot/releases/tag/3.5.1-stable)
+* Download [respository as a zip](https://github.com/RillonDodgers/VRCrew-Incremental-Game/archive/refs/heads/main.zip)
+* Open Godot
+* Click Import & Browse for the zip file for this project
+
 
 # Screenshots
 ### Main Screen
